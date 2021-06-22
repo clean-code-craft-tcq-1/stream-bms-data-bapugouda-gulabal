@@ -17,6 +17,7 @@ void receiveBMSdata()
 	bmsData_a[0] = '\0';
 	strIndexer_c = NULL;
 	cnt_i = 0;
+	temp_buffer[0] = '\0';
 		
 	scanf("%s", bmsData_a);		
 	  
