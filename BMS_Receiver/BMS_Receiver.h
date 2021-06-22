@@ -26,4 +26,7 @@ typedef struct {
 	  int valCount_i;
 }bmsReceiver_t;
 
+/* Function declarations */
+void readBMSdata(char *strIndexer_c);
+
 /* EOF */
