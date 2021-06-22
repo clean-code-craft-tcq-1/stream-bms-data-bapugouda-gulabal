@@ -30,8 +30,6 @@ void readBMSdata(char *bmsData_a)
 			temp_buffer[0] ='\0';
 			printf("strIndexer_c %s \n",strIndexer_c);
 			printf("------------cnt_i :: %d \n", cnt_i);
-			cnt_i = 12+cnt_i;
-			printf("cnt_i :: %d \n", cnt_i);
 			while(strIndexer_c[12+cnt_i] != ',')
 			{
 				//temp_buffer[cnt_i] = strIndexer_c[12+cnt_i];
