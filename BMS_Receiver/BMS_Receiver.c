@@ -33,8 +33,8 @@ void readBMSdata()
       		temp_buffer[cnt_i] = strIndexer_c[12+cnt_i];
 			cnt_i++;
     	}
-		soc_buffer[0]  = strIndexer_c[14+cnt_i];
-		soc_buffer[1]  = strIndexer_c[15+cnt_i];
+		soc_buffer[0]  = strIndexer_c[12+14+cnt_i];
+		soc_buffer[1]  = strIndexer_c[12+15+cnt_i];
 		
 		printf("Check SSSSS : %c \n", soc_buffer[0]);
 		printf("Check SSSSS : %c \n", soc_buffer[1]);
