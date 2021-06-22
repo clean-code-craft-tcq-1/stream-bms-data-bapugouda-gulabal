@@ -25,6 +25,7 @@ public class SederDataService implements IDataProvider {
 			bmsData.append(SenderDataConstants.TEMPERTAURE + ":" + getTemperature());
 			bmsData.append(",");
 			bmsData.append(SenderDataConstants.STATE_OF_CHARGE + ":" + getStateOfCharge());
+			bmsData.append(",");
 			return bmsData.toString();
 		}
 
