@@ -25,7 +25,7 @@ void analyzeBMSData(char *bmsData_a)
 	char temp_buffer[5] = {0};
 	char *strIndexer_c = NULL;
 	
-	for(int cntParam = 0;cntParam++ <= 2; cntParam++)
+	for(int cntParam = 0;cntParam < 2; cntParam++)
 	{
 		printf("bmsParam_a %s \n ", bmsParam_a[cntParam]);
 		strIndexer_c = strstr(bmsData_a, bmsParam_a[cntParam]);
