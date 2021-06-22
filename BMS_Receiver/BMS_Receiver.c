@@ -27,11 +27,11 @@ void analyzeBMSData(char *bmsData_a)
 	
 	for(int cntParam = 0;cntParam < 2; cntParam++)
 	{
+		printf("bmsData_a %s \n",bmsData_a);
 		printf("bmsParam_a %s \n ", bmsParam_a[cntParam]);
 		strIndexer_c = strstr(bmsData_a, bmsParam_a[cntParam]);
 		if(NULL != strIndexer_c)
 		{
-			printf("bmsData_a %s \n",bmsData_a);
 			printf("strIndexer_c %s \n",strIndexer_c);
 			while(strIndexer_c[14+cnt_i] != ',')
 			{
