@@ -33,7 +33,7 @@ void readBMSdata(char *bmsData_a)
 				cnt_i++;
 			}
 			bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][cntParam] = atof(temp_buffer);
-			printf("%s : %f \n ", bmsParam_a[cntParam], bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][cntParam]);*/
+			printf("%s : %f \n ", bmsParam_a[cntParam], bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][cntParam]);
 			bmsReceiverData_s.valCount_i++;
 		}
 	}	
