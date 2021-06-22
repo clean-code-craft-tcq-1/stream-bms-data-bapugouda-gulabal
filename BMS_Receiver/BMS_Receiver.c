@@ -3,6 +3,10 @@
 void readBMSdata(void);
 void analyzeBMSData(char *strIndexer_c);
 
+const char bmsParam_a[2][20] = {"Temperature:", "StateOfCharge"};
+float bmsParamVal[15][2] = {0};
+int valCount_i = 0;
+
 void readBMSdata() 
 {
   char bmsData_a[500] = {0};
@@ -10,39 +14,35 @@ void readBMSdata()
   
   for(int count = 0;count++ <= 200; count++)
   {
-	strIndexer_c = NULL;
-		
 	scanf("%s", bmsData_a);		
-	  
-	strIndexer_c = strstr(bmsData_a, "Temperature:");
-  
-	if(NULL != strIndexer_c)
-	{
-		analyzeBMSData(strIndexer_c);
-	}
+	analyzeBMSData(char *bmsData_a);
   }
 }
 
-void analyzeBMSData(char *strIndexer_c)
+void analyzeBMSData(char *bmsData_a)
 {
 	int cnt_i=0;
 	char temp_buffer[5] = {0};
-	char soc_buffer[2]  = {0};
 	float temp_f;
-	int soc_i;
 	
-	while(strIndexer_c[12+cnt_i] != ',')
+	strIndexer_c = NULL;
+	
+	for(int cntParam = 0;cntParam++ <= 2; cntParam++)
 	{
-		temp_buffer[cnt_i] = strIndexer_c[12+cnt_i];
-		cnt_i++;
-	}
-	soc_buffer[0]  = strIndexer_c[12+15+cnt_i];
-	soc_buffer[1]  = strIndexer_c[12+16+cnt_i];
-
-	temp_f = atof(temp_buffer);
-	soc_i  = atoi(soc_buffer);
-	printf("Check Temp : %f \n", temp_f);
-	printf("Check SOC : %d \n", soc_i);
+		strIndexer_c = strstr(bmsData_a, bmsParam_a[cntParam]);
+		if(NULL != strIndexer_c)
+		{
+			while(strIndexer_c[14+cnt_i] != ',')
+			{
+				temp_buffer[cnt_i] = strIndexer_c[14+cnt_i];
+				cnt_i++;
+			}
+			bmsParamVal[valCount_i][cntParam] = atof(temp_buffer);
+			printf("Check %s %f \n ", bmsParam_a[cntParam], bmsParamVal[valCount_i][cntParam]);
+		}
+	}	
+	
+	valCount_i++;
 }
 
 int main ()
