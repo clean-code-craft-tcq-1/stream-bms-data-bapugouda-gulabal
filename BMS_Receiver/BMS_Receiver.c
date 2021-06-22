@@ -20,7 +20,7 @@ void receiveBMSdata()
   
     	for(int tempCnt_i = 13;strIndexer_c[tempCnt_i] != '|'; tempCnt_i++)
     	{
-      		temp_buffer[tempCnt_i++] = strIndexer_c[tempCnt_i++];
+      		temp_buffer[tempCnt_i] = strIndexer_c[tempCnt_i];
     	}
     
     *temp_f = atof(temp_buffer);
