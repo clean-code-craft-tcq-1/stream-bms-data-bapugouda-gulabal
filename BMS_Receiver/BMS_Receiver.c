@@ -11,7 +11,8 @@ void readBMSdata()
   char temp_buffer[5] = {0};
   char soc_buffer[2]  = {0};
   char *strIndexer_c = NULL;
-  float temp_f, soc_f;
+  float temp_f;
+	int soc_f;
   int cnt_i=0;
   for(int count = 0;count++ <= 200; count++)
   {
@@ -33,6 +34,7 @@ void readBMSdata()
       		temp_buffer[cnt_i] = strIndexer_c[12+cnt_i];
 			cnt_i++;
     	}
+		printf("Check SSSSvdfgfS : %s \n", soc_buffer);
 		soc_buffer[0]  = strIndexer_c[12+15+cnt_i];
 		soc_buffer[1]  = strIndexer_c[12+16+cnt_i];
 		
@@ -41,9 +43,9 @@ void readBMSdata()
 		printf("Check SSSSS : %s \n", soc_buffer);
     
         temp_f = atof(temp_buffer);
-		soc_f  = atof(soc_buffer);
+		soc_f  = ato1(soc_buffer);
         printf("Check Temp : %f \n", temp_f);
-		printf("Check SOC : %f \n", soc_f);
+		printf("Check SOC : %d \n", soc_f);
 	}
   }
 }
