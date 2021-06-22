@@ -7,15 +7,16 @@ void receiveBMSdata(void);
 
 void receiveBMSdata() 
 {
-  char bmsData_a[2000] = {0};
+  char bmsData_a[500] = {0};
   char temp_buffer[5] = {0};
   char *strIndexer_c = NULL;
   float temp_f;
   int cnt_i=0;
-  for(int count = 0;count++ <= 7000; count++)
+  for(int count = 0;count++ <= 200; count++)
   {
 	bmsData_a[0] = '\0';
 	strIndexer_c = NULL;
+	cnt_i = 0;
 		
 	scanf("%s", bmsData_a);		
 	  
@@ -25,7 +26,7 @@ void receiveBMSdata()
 	{
 	printf("dddddddddd : %s \n", bmsData_a);
 
-    	while(strIndexer_c[12+cnt_i] != '\,')
+    	while(strIndexer_c[12+cnt_i] != ',')
     	{
       		temp_buffer[cnt_i] = strIndexer_c[12+cnt_i];
 		printf("Check ewrewdf : %c \n", temp_buffer[cnt_i]);
