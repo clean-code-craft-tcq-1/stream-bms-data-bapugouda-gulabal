@@ -41,11 +41,11 @@ void readBMSdata(char *bmsData_a)
 
 int main ()
 {
-  char bmsData_a[50] = {0};
-  printf("Check");
+  char bmsData_a[500] = {0};
+  
   for(int count = 0;count++ <= 200; count++)
   {
-	//scanf("%s", bmsData_a);	
+	scanf("%s", bmsData_a);	
 	//readBMSdata(bmsData_a);
   }
 	
