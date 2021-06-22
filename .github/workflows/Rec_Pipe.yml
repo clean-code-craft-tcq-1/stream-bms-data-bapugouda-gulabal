@@ -18,7 +18,7 @@ jobs:
       run: mvn compile exec:java -Dexec.mainClass="sender.SenderApplication"
     
     - name: Receiver Build
-      run:  g++  -I ./Receiver/production -Wall -Wextra -o bmsReceiver ./Receiver/*.c*
+      run: gcc -Wall -Wextra -fprofile-arcs -ftest-coverage -o bmsReceiver src/Receiver/*.c*
         
     - name: Pipe
       run: mvn compile exec:java -Dexec.mainClass="sender.SenderApplication" | ./bmsReceiver
