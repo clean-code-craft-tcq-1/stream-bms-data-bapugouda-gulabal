@@ -20,13 +20,14 @@ void receiveBMSdata()
 		
 	strIndexer_c = strstr(bmsData_a, "\"Temperature\":");
   
-    	/*for(int tempCnt_i = 13;strIndexer_c[tempCnt_i] != '|'; tempCnt_i++)
+    	for(int tempCnt_i = 10;strIndexer_c[tempCnt_i] != '|'; tempCnt_i++)
     	{
       		temp_buffer[tempCnt_i] = strIndexer_c[tempCnt_i];
+		printf("Check ewrewdf : %f \n", tempCnt_i);
     	}
     
     temp_f = atof(temp_buffer);
-    printf("Check Temp : %f \n", temp_f);*/
+    printf("Check Temp : %f \n", temp_f);
     
   }
 }
