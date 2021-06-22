@@ -11,6 +11,7 @@ void receiveBMSdata()
   char temp_buffer[5] = {0};
   char *strIndexer_c = NULL;
   float temp_f;
+  int cnt_i;
   for(int count = 0;count++ <= 7000; count++)
   {
 	bmsData_a[0] = '\0';
