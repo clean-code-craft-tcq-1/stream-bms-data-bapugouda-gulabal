@@ -18,7 +18,7 @@ void receiveBMSdata()
 	strIndexer_c = NULL;
 		
 	scanf("%s", bmsData_a);
-	printf("dddddddddd : %s \n", bmsData_a);		
+	//printf("dddddddddd : %s \n", bmsData_a);		
 	  
 	strIndexer_c = strstr(bmsData_a, "Temperature:");
   
@@ -26,8 +26,8 @@ void receiveBMSdata()
 	{
     	while(strIndexer_c[cnt_i] != ',')
     	{
-      		temp_buffer[cnt_i] = strIndexer_c[11+cnt_i];
-		printf("Check ewrewdf : %d %c \n", cnt_i, temp_buffer[cnt_i]);
+      		temp_buffer[cnt_i] = strIndexer_c[12+cnt_i];
+		printf("Check ewrewdf : %c \n", temp_buffer[cnt_i]);
 		cnt_i++;
     	}
     
