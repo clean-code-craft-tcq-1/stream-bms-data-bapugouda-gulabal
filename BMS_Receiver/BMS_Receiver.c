@@ -7,11 +7,11 @@ void receiveBMSdata(void);
 
 void receiveBMSdata() 
 {
-  char bmsData_a[50] = {0};
+  char bmsData_a[2000] = {0};
   char temp_buffer[5] = {0};
   char *strIndexer_c = NULL;
   float temp_f;
-  for(int count = 0;count++ <= 15; count++)
+  for(int count = 0;count++ <= 150; count++)
   {
 	bmsData_a[0] = '\0';
 	strIndexer_c = NULL;
