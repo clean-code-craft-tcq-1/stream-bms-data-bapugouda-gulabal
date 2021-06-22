@@ -2,6 +2,6 @@
 
 int main()
 {
-printf("Check");
+printf("\nCheck--------------\n");
 return 0;
 }
