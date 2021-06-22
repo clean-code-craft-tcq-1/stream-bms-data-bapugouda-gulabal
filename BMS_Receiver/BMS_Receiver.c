@@ -7,7 +7,7 @@ void receiveBMSdata(void);
 
 void receiveBMSdata() 
 {
-  char bmsData_a[50] = {0};
+  /*char bmsData_a[50] = {0};
   char temp_buffer[5] = {0};
   char *strIndexer_c = NULL;
   float temp_f;
@@ -28,11 +28,12 @@ void receiveBMSdata()
     temp_f = atof(temp_buffer);
     printf("Check Temp : %f \n", temp_f);
     
-  }
+  }*/
 }
 
 int main ()
 {
-  receiveBMSdata();
+  //receiveBMSdata();
+	printf("\nCheck---------------------\n"");
   return 0;	
 }
