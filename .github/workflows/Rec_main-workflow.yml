@@ -34,4 +34,4 @@ jobs:
       run: g++ -I ./Receiver/production/ -Wall -Wextra -o bmsReceiver Receiver/*.c*
       
     - name: bmsReceiver production
-      run: ./bmsReceiver
+      run: ./bmsReceiver 
