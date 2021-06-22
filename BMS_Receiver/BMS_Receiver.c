@@ -35,6 +35,9 @@ void readBMSdata()
     	}
 		soc_buffer[0]  = strIndexer_c[14+cnt_i];
 		soc_buffer[1]  = strIndexer_c[15+cnt_i];
+		
+		printf("Check SSSSS : %c \n", soc_buffer[0]);
+		printf("Check SSSSS : %c \n", soc_buffer[1]);
     
         temp_f = atof(temp_buffer);
 		soc_f  = atof(soc_buffer);
