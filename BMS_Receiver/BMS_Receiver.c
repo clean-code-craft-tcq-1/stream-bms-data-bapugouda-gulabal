@@ -43,7 +43,7 @@ void readBMSdata()
 		printf("Check SSSSS : %s \n", soc_buffer);
     
         temp_f = atof(temp_buffer);
-		soc_f  = ato1(soc_buffer);
+		soc_f  = atoi(soc_buffer);
         printf("Check Temp : %f \n", temp_f);
 		printf("Check SOC : %d \n", soc_f);
 	}
