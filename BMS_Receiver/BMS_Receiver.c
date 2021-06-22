@@ -15,7 +15,7 @@ void readBMSdata()
   for(int count = 0;count++ <= 200; count++)
   {
 	scanf("%s", bmsData_a);		
-	analyzeBMSData(char *bmsData_a);
+	analyzeBMSData(bmsData_a);
   }
 }
 
@@ -23,9 +23,7 @@ void analyzeBMSData(char *bmsData_a)
 {
 	int cnt_i=0;
 	char temp_buffer[5] = {0};
-	float temp_f;
-	
-	strIndexer_c = NULL;
+	char *strIndexer_c = NULL;
 	
 	for(int cntParam = 0;cntParam++ <= 2; cntParam++)
 	{
