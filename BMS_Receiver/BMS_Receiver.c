@@ -3,4 +3,5 @@
 int main()
 {
 printf("Check");
+return 0;
 }
