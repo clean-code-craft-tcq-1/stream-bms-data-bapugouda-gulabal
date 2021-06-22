@@ -10,9 +10,7 @@ void readBMSdata()
   
   for(int count = 0;count++ <= 200; count++)
   {
-	bmsData_a[0] = '\0';
 	strIndexer_c = NULL;
-	temp_buffer[0] = '\0';
 		
 	scanf("%s", bmsData_a);		
 	  
