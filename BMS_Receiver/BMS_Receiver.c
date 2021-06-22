@@ -37,7 +37,7 @@ void readBMSdata(char *bmsData_a)
 		}
 	}	
 	
-	valCount_i++;
+	bmsReceiverData_s.valCount_i++;
 }
 
 int main ()
