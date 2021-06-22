@@ -27,6 +27,7 @@ void readBMSdata(char *bmsData_a)
 		if(NULL != strIndexer_c)
 		{
 			printf("strIndexer_c %s \n",strIndexer_c);
+			cnt_i = 0;
 			while(strIndexer_c[BMS_PARAM_READ_INDEX+cnt_i] != ',')
 			{
 				temp_buffer[cnt_i] = strIndexer_c[BMS_PARAM_READ_INDEX+cnt_i];
