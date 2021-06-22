@@ -8,18 +8,17 @@ void receiveBMSdata(void);
 void receiveBMSdata() 
 {
   char bmsData_a[2000] = {0};
-  char temp_buffer[5] = {0};
-  char *strIndexer_c = NULL;
-  float temp_f;
+  //char temp_buffer[5] = {0};
+  //char *strIndexer_c = NULL;
+  //float temp_f;
   for(int count = 0;count++ <= 7000; count++)
   {
 	bmsData_a[0] = '\0';
 	strIndexer_c = NULL;
 		
-	scanf("%s", bmsData_a);
-	printf("dddddddddd : %s \n", bmsData_a);
+	/*scanf("%s", bmsData_a);
+	printf("dddddddddd : %s \n", bmsData_a);*/
 	gets (bmsData_a);
-	
 	printf("ttttttttttt : %s \n", bmsData_a);		
 	  
 	/*strIndexer_c = strstr(bmsData_a, "Temperature:");
