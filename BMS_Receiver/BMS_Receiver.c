@@ -17,13 +17,13 @@ void receiveBMSdata()
 	bmsData_a[0] = '\0';
 	strIndexer_c = NULL;
 		
-	scanf("%s", bmsData_a);
-	//printf("dddddddddd : %s \n", bmsData_a);		
+	scanf("%s", bmsData_a);		
 	  
 	strIndexer_c = strstr(bmsData_a, "Temperature:");
   
 	if(NULL != strIndexer_c)
 	{
+	printf("dddddddddd : %s \n", bmsData_a);
     	while(strIndexer_c[cnt_i] != ',')
     	{
       		temp_buffer[cnt_i] = strIndexer_c[12+cnt_i];
