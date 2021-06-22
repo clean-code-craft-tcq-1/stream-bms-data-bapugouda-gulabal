@@ -21,4 +21,4 @@ jobs:
       run:  g++  -I ./Bms_Receiver/production -Wall -Wextra -o bmsReceiver BMS_Receiver/*.c*
         
     - name: Pipe
-      run: mvn compile exec:java -Dexec.mainClass="streambms.sender.BMSSenderService" | ./bmsReceiver
+      run: mvn compile exec:java -Dexec.mainClass="sender.SenderApplication" | ./bmsReceiver
