@@ -23,7 +23,7 @@ void receiveBMSdata()
       		temp_buffer[tempCnt_i] = strIndexer_c[tempCnt_i];
     	}
     
-    *temp_f = atof(temp_buffer);
+    temp_f = atof(temp_buffer);
     printf("Check Temp : %f \n", temp_f);
     
   }
