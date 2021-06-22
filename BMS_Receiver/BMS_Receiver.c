@@ -40,7 +40,7 @@ void analyzeBMSData(char *strIndexer_c)
 	soc_buffer[1]  = strIndexer_c[12+16+cnt_i];
 
 	temp_f = atof(temp_buffer);
-	soc_i  = ato1(soc_buffer);
+	soc_i  = atoi(soc_buffer);
 	printf("Check Temp : %f \n", temp_f);
 	printf("Check SOC : %d \n", soc_i);
 }
