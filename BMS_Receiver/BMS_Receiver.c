@@ -22,7 +22,7 @@ void receiveBMSdata()
 	  
 	strIndexer_c = strstr(bmsData_a, "Temperature:");
   
-	if(NULL != strIndexer_c)
+	/*if(NULL != strIndexer_c)
 	{
     	for(int tempCnt_i = 0;strIndexer_c[tempCnt_i] != '|'; tempCnt_i++)
     	{
@@ -32,7 +32,7 @@ void receiveBMSdata()
     
         temp_f = atof(temp_buffer);
         printf("Check Temp : %f \n", temp_f);
-	}
+	}*/
     
   }
 }
