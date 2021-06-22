@@ -23,7 +23,7 @@ void receiveBMSdata()
   
 	if(NULL != strIndexer_c)
 	{
-    	for(int tempCnt_i = 0;strIndexer_c[tempCnt_i] != '|'; tempCnt_i++)
+    	while(strIndexer_c[tempCnt_i] != ',')
     	{
       		temp_buffer[tempCnt_i] = strIndexer_c[12+tempCnt_i];
 		printf("Check ewrewdf : %d %c \n", tempCnt_i, temp_buffer[tempCnt_i]);
