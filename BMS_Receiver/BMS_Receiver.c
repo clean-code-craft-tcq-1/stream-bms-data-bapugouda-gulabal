@@ -13,12 +13,12 @@ void receiveBMSdata()
   //float temp_f;
   for(int count = 0;count++ <= 7000; count++)
   {
-	bmsData_a[0] = '\0';
+	//bmsData_a[0] = '\0';
 	//strIndexer_c = NULL;
 		
 	/*scanf("%s", bmsData_a);
 	printf("dddddddddd : %s \n", bmsData_a);*/
-	fgets (bmsData_a);
+	gets (bmsData_a);
 	printf("ttttttttttt : %s \n", bmsData_a);		
 	  
 	/*strIndexer_c = strstr(bmsData_a, "Temperature:");
