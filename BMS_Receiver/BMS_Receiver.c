@@ -34,6 +34,6 @@ void receiveBMSdata()
 int main ()
 {
   //receiveBMSdata();
-	printf("\nCheck---------------------\n"");
+	printf("\nCheck---------------------\n");
   return 0;	
 }
