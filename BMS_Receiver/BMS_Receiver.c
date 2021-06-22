@@ -1,4 +1,4 @@
-
+#include "BMS_Receiver.h"
 
 void readBMSdata(void);
 void analyzeBMSData(char *strIndexer_c);
