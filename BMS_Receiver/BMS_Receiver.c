@@ -11,7 +11,7 @@ void receiveBMSdata()
   char temp_buffer[5] = {0};
   char *strIndexer_c = NULL;
   float temp_f;
-  for(int count = 0;count++ <= 150; count++)
+  for(int count = 0;count++ <= 7000; count++)
   {
 	bmsData_a[0] = '\0';
 	strIndexer_c = NULL;
@@ -20,16 +20,19 @@ void receiveBMSdata()
 	
 	printf("ttttttttttt : %s \n", bmsData_a);		
 	  
-	//strIndexer_c = strstr(bmsData_a, "Temperature:");
+	strIndexer_c = strstr(bmsData_a, "Temperature:");
   
-    	/*for(int tempCnt_i = 0;strIndexer_c[tempCnt_i] != '|'; tempCnt_i++)
+	if(NULL != strIndexer_c)
+	{
+    	for(int tempCnt_i = 0;strIndexer_c[tempCnt_i] != '|'; tempCnt_i++)
     	{
       		temp_buffer[tempCnt_i] = strIndexer_c[tempCnt_i];
 		printf("Check ewrewdf : %d \n", tempCnt_i);
     	}
     
-    temp_f = atof(temp_buffer);
-    printf("Check Temp : %f \n", temp_f);*/
+        temp_f = atof(temp_buffer);
+        printf("Check Temp : %f \n", temp_f);
+	}
     
   }
 }
