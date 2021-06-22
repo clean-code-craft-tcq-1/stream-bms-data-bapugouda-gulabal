@@ -15,7 +15,6 @@ void readBMSdata()
   for(int count = 0;count++ <= 200; count++)
   {
 	scanf("%s", bmsData_a);	
-	//printf("bmsData_a %s \n",bmsData_a);
 	analyzeBMSData(bmsData_a);
   }
 }
@@ -28,8 +27,6 @@ void analyzeBMSData(char *bmsData_a)
 	
 	for(int cntParam = 0;cntParam < 2; cntParam++)
 	{
-		//printf("bmsData_a %s \n",bmsData_a);
-		//printf("bmsParam_a %s \n ", bmsParam_a[cntParam]);
 		strIndexer_c = strstr(bmsData_a, bmsParam_a[cntParam]);
 		if(NULL != strIndexer_c)
 		{
@@ -40,7 +37,7 @@ void analyzeBMSData(char *bmsData_a)
 				cnt_i++;
 			}
 			bmsParamVal[valCount_i][cntParam] = atof(temp_buffer);
-			printf("Check %s %f \n ", bmsParam_a[cntParam], bmsParamVal[valCount_i][cntParam]);
+			printf("%s : %f \n ", bmsParam_a[cntParam], bmsParamVal[valCount_i][cntParam]);
 		}
 	}	
 	
