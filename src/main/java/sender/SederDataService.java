@@ -22,9 +22,9 @@ public class SederDataService implements IDataProvider {
 
 		private String getValue() {
 			StringBuilder bmsData = new StringBuilder();
-			bmsData.append(SenderDataConstants.TEMPERTAURE + ": " + getTemperature());
-			bmsData.append(" |");
-			bmsData.append(SenderDataConstants.STATE_OF_CHARGE + ": " + getStateOfCharge());
+			bmsData.append(SenderDataConstants.TEMPERTAURE + ":" + getTemperature());
+			bmsData.append("|");
+			bmsData.append(SenderDataConstants.STATE_OF_CHARGE + ":" + getStateOfCharge());
 			return bmsData.toString();
 		}
 
