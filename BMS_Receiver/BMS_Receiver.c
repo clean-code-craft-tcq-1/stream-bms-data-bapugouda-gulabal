@@ -17,17 +17,19 @@ void receiveBMSdata()
 	strIndexer_c = NULL;
 		
 	scanf("%s", bmsData_a);
-		
+	
+	printf("ttttttttttt : %s \n", temp_f);		
+	  
 	strIndexer_c = strstr(bmsData_a, "Temperature:");
   
-    	for(int tempCnt_i = 0;strIndexer_c[tempCnt_i] != '|'; tempCnt_i++)
+    	/*for(int tempCnt_i = 0;strIndexer_c[tempCnt_i] != '|'; tempCnt_i++)
     	{
       		temp_buffer[tempCnt_i] = strIndexer_c[tempCnt_i];
 		printf("Check ewrewdf : %d \n", tempCnt_i);
     	}
     
     temp_f = atof(temp_buffer);
-    printf("Check Temp : %f \n", temp_f);
+    printf("Check Temp : %f \n", temp_f);*/
     
   }
 }
