@@ -30,6 +30,7 @@ void analyzeBMSData(char *bmsData_a)
 		strIndexer_c = strstr(bmsData_a, bmsParam_a[cntParam]);
 		if(NULL != strIndexer_c)
 		{
+			printf("Check %s \n",bmsData_a);
 			while(strIndexer_c[14+cnt_i] != ',')
 			{
 				temp_buffer[cnt_i] = strIndexer_c[14+cnt_i];
