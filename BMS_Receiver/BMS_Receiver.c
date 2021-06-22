@@ -13,7 +13,7 @@
 #include "BMS_Receiver.h"
 
 /* Declarations */
-bmsReceiver_t bmsReceiverData_s = {{0}, 0};
+bmsReceiver_t bmsReceiverData_s = {0};
 
 void readBMSdata(char *bmsData_a)
 {
