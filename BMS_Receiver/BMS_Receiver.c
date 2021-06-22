@@ -17,6 +17,8 @@ void receiveBMSdata()
 	strIndexer_c = NULL;
 		
 	scanf("%s", bmsData_a);
+	printf("dddddddddd : %s \n", bmsData_a);
+	gets (bmsData_a);
 	
 	printf("ttttttttttt : %s \n", bmsData_a);		
 	  
