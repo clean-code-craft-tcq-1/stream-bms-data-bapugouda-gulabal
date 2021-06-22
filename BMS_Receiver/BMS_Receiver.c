@@ -18,7 +18,7 @@ void receiveBMSdata()
 		
 	scanf("%s", bmsData_a);
 		
-	strIndexer_c = strstr(bmsData_a, "\"Temperature\":");
+	strIndexer_c = strstr(bmsData_a, "Temperature:");
   
     	for(int tempCnt_i = 0;strIndexer_c[tempCnt_i] != '|'; tempCnt_i++)
     	{
