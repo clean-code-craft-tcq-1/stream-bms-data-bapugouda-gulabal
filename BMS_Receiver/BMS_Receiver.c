@@ -18,7 +18,7 @@ void receiveBMSdata()
 		
 	scanf("%s", bmsData_a);
 	
-	//printf("ttttttttttt : %s \n", bmsData_a);		
+	printf("ttttttttttt : %s \n", bmsData_a);		
 	  
 	/*strIndexer_c = strstr(bmsData_a, "Temperature:");
   
