@@ -34,7 +34,7 @@ void readBMSdata(char *bmsData_a)
 			printf("cnt_i :: %d \n", cnt_i);
 			while(strIndexer_c[12+cnt_i] != ',')
 			{
-				temp_buffer[cnt_i] = strIndexer_c[12+cnt_i];
+				//temp_buffer[cnt_i] = strIndexer_c[12+cnt_i];
 				cnt_i++;
 			}
 			bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][cntParam] = atof(temp_buffer);
