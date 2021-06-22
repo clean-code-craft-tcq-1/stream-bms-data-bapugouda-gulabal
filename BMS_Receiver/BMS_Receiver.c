@@ -19,6 +19,7 @@ void readBMSdata()
 	strIndexer_c = NULL;
 	cnt_i = 0;
 	temp_buffer[0] = '\0';
+	soc_buffer[0] = '\0';
 		
 	scanf("%s", bmsData_a);		
 	  
@@ -26,6 +27,7 @@ void readBMSdata()
   
 	if(NULL != strIndexer_c)
 	{
+		printf("66666666666 : %s \n", strIndexer_c);
     	while(strIndexer_c[12+cnt_i] != ',')
     	{
       		temp_buffer[cnt_i] = strIndexer_c[12+cnt_i];
