@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Sender Build
-      run: mvn compile exec:java -Dexec.mainClass="streambms.sender.BMSSenderService"
+      run: mvn compile exec:java -Dexec.mainClass="streambms.sender.SenderApplication"
     
     - name: Receiver Build
       run:  g++  -I ./Receiver/production -Wall -Wextra -o bmsReceiver ./Receiver/*.c*
