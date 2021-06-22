@@ -3,6 +3,8 @@
 #include "stdlib.h"
 #include "string.h"
 
+void receiveBMSdata(void);
+
 void receiveBMSdata() 
 {
   char bmsData_a[50] = {0};
@@ -27,4 +29,10 @@ void receiveBMSdata()
     printf("Check Temp : %f \n", temp_f);
     
   }
+}
+
+int main ()
+{
+  receiveBMSdata();
+  return 0;	
 }
