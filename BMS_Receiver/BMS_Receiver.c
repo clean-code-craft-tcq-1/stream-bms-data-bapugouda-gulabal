@@ -3,7 +3,7 @@
 void readBMSdata(void);
 void analyzeBMSData(char *strIndexer_c);
 
-const char bmsParam_a[2][20] = {"Temperature:", "StateOfCharge"};
+const char bmsParam_a[2][20] = {"Temperature", "StateOfCharge"};
 float bmsParamVal[15][2] = {0};
 int valCount_i = 0;
 
