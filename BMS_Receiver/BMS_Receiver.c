@@ -3,14 +3,15 @@
 #include "stdlib.h"
 #include "string.h"
 
-void receiveBMSdata(void);
+void readBMSdata(void);
 
-void receiveBMSdata() 
+void readBMSdata() 
 {
   char bmsData_a[500] = {0};
   char temp_buffer[5] = {0};
+  char soc_buffer[2]  = {0};
   char *strIndexer_c = NULL;
-  float temp_f;
+  float temp_f, soc_f;
   int cnt_i=0;
   for(int count = 0;count++ <= 200; count++)
   {
@@ -25,25 +26,24 @@ void receiveBMSdata()
   
 	if(NULL != strIndexer_c)
 	{
-	printf("dddddddddd : %s \n", bmsData_a);
-
     	while(strIndexer_c[12+cnt_i] != ',')
     	{
       		temp_buffer[cnt_i] = strIndexer_c[12+cnt_i];
-		printf("Check ewrewdf : %c \n", temp_buffer[cnt_i]);
-		cnt_i++;
+			cnt_i++;
     	}
+		soc_buffer[0]  = strIndexer_c[14+cnt_i];
+		soc_buffer[1]  = strIndexer_c[15+cnt_i];
     
         temp_f = atof(temp_buffer);
+		soc_f  = atof(soc_buffer);
         printf("Check Temp : %f \n", temp_f);
 	}
-    
   }
 }
 
 int main ()
 {
-  receiveBMSdata();
+  readBMSdata();
   printf("\nCheck---------------------\n");
   return 0;	
 }
