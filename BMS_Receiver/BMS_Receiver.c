@@ -35,7 +35,7 @@ void readBMSdata(char *bmsData_a)
 			printf("------------cnt_i :: %d \n", cnt_i);
 			while(strIndexer_c[12+cnt_i] != ',')
 			{
-				//temp_buffer[cnt_i] = strIndexer_c[12+cnt_i];
+				temp_buffer[0] = strIndexer_c[12+cnt_i];
 				printf("asdfsdfdsfsfsd %c \n",strIndexer_c[12+cnt_i]);
 				cnt_i++;
 			}
