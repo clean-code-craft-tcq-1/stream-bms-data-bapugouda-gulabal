@@ -34,10 +34,11 @@ void readBMSdata(char *bmsData_a)
 			/*printf("chSOCBuff_a[cnt_i] : %s",chSOCBuff_a[cnt_i]);*/
 			cnt_i++;
 		}
+		cnt_i = 0;
 		while(strSOCIndexer_c[12+cnt_i] != ',')
 		{
 			chSOCBuff_a[cnt_i]= strSOCIndexer_c[12+cnt_i];
-			/*printf("chSOCBuff_a[cnt_i] : %s",chSOCBuff_a[cnt_i]);*/
+			printf("chSOCBuff_a[cnt_i] : %s",chSOCBuff_a[cnt_i]);
 			cnt_i++;
 		}
 		
