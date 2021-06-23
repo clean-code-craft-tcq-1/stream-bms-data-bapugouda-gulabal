@@ -137,7 +137,7 @@ int main ()
 	readBMSdata_v(bmsData_a);
   }
   
-  analyseBMSData();
+  analyseBMSData_v();
 	
   return 0;	
 }
