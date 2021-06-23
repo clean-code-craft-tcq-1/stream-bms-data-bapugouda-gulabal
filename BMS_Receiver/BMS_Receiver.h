@@ -35,5 +35,6 @@ typedef struct {
 /* Function declarations */
 void readBMSdata(char *strIndexer_c);
 void analyseBMSData(void);
+void calDataRanges_v(void);
 
 /* EOF */
