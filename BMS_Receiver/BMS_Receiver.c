@@ -92,8 +92,9 @@ int main ()
   {
 	scanf("%s", bmsData_a);	
 	readBMSdata(bmsData_a);
-	analyseBMSData();
   }
+  
+  analyseBMSData();
 	
   return 0;	
 }
