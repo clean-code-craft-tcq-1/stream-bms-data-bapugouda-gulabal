@@ -35,7 +35,7 @@ void readBMSdata(char *bmsData_a)
 				tempBuffer_a[cnt_i] = strIndexer_c[12+cnt_i] - 0x30;
 				printf("------------cnt_i :: %d \n", cnt_i);
 				printf("asdfsdfdsfsfsd %c \n",strIndexer_c[12+cnt_i]);
-				printf("tempBuffer_a %s \n",tempBuffer_a);
+				printf("tempBuffer_a %d \n",tempBuffer_a[cnt_i]);
 				cnt_i++;
 			}
 			bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][cntParam] = atof(tempBuffer_a);
