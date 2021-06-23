@@ -31,7 +31,7 @@ void analyseBMSData_v(void)
 	
 	for(int count_i=0;count_i < bmsReceiverData_s.valCount_i; count_i++)
 	{
-		calDataRanges_v();
+		calDataRanges_v(count_i);
 	}
 	bmsReceiverData_s.tempStat_e.avg_f = bmsReceiverData_s.tempStat_e.avg_f / bmsReceiverData_s.valCount_i;
 	bmsReceiverData_s.socStat_e.avg_f = bmsReceiverData_s.socStat_e.avg_f / bmsReceiverData_s.valCount_i;
@@ -49,11 +49,11 @@ void analyseBMSData_v(void)
  */
 /*!    \brief       To find min,max and average
  *
- *     \param       void
+ *     \param       int count_i - index of BMS data
  *     \returns     void
  *
 *//*------------------------------------------------------------------------*/
-void calDataRanges_v(void)
+void calDataRanges_v(int count_i)
 {
 	if(bmsReceiverData_s.bmsParamVal_f[count_i][0] < bmsReceiverData_s.tempStat_e.minVal_f) {
 		bmsReceiverData_s.tempStat_e.minVal_f = bmsReceiverData_s.bmsParamVal_f[count_i][0];
