@@ -18,7 +18,7 @@ bmsReceiver_t bmsReceiverData_s = {0};
 void readBMSdata(char *bmsData_a)
 {
 	int cnt_i = 0;
-	char temp_buffer[4] = {0};
+	char temp_buffer[4];
 	char *strIndexer_c = NULL;
 	
 	for(int cntParam = 0;cntParam < 2; cntParam++)
