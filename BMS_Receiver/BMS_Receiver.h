@@ -17,8 +17,6 @@
 
 /* Constants and Macros */
 
-#define BMS_PARAM_READ_INDEX    12U
-
 const char bmsParam_a[2][20] = {"Temperature", "StateOfChar"};
 
 typedef struct {
