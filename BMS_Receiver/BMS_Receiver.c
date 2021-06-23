@@ -19,7 +19,8 @@ void readBMSdata(char *bmsData_a)
 {
 	int cnt_i = 0;
 	char *strIndexer_c = NULL;
-	char ch[5];
+	char chBuf_a[5];
+	
 	for(int cntParam = 0;cntParam < 2; cntParam++)
 	{
 		strIndexer_c = strstr(bmsData_a, bmsParam_a[cntParam]);
@@ -29,11 +30,10 @@ void readBMSdata(char *bmsData_a)
 			printf("strIndexer_c %s \n",strIndexer_c);
 			while(strIndexer_c[12+cnt_i] != ',')
 			{
-				ch[cnt_i]= strIndexer_c[12+cnt_i];
-				printf("tempBuffer_a %s \n",ch);
+				chBuf_a[cnt_i]= strIndexer_c[12+cnt_i];
 				cnt_i++;
 			}
-			bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][cntParam] = atof(ch);
+			bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][cntParam] = atof(chBuf_a);
 			printf("%s : %f \n ", bmsParam_a[cntParam], bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][cntParam]);
 			bmsReceiverData_s.valCount_i++;
 		}
