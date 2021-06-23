@@ -63,8 +63,7 @@ void storeBMSData_v(char *strIndexer_c)
 	chSOCBuff_a[socCnt_i] = '\0';
 	bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][0] = atof(chTempBuf_a);
 	bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][1] = atof(chSOCBuff_a);
-	bmsReceiverData_s.valCount_i++;
-	printf("bmsReceiverData_s.valCount_i %d \n ", bmsReceiverData_s.valCount_i);	
+	bmsReceiverData_s.valCount_i++;	
 }/* EO storeBMSData_v */
 
 /*---------------------------------------------------------------------------*/
