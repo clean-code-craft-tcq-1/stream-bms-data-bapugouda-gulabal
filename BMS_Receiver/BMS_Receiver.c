@@ -26,16 +26,16 @@ void readBMSdata(char *bmsData_a)
 	{
 		cnt_i = 0;
 		printf("strIndexer_c %s \n",strIndexer_c);
-		/*while(strIndexer_c[12+cnt_i] != ',')
+		while(strIndexer_c[12+cnt_i] != ',')
 		{
 			chTempBuf_a[cnt_i]= strIndexer_c[12+cnt_i];
 			chSOCBuff_a[cnt_i]= strIndexer_c[25+cnt_i];
 			cnt_i++;
-		}*/
-		/*bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][0] = atof(chTempBuf_a);
+		}
+		bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][0] = atof(chTempBuf_a);
 		bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][1] = atof(chSOCBuff_a);
 		printf("%s : %f \n ", bmsParam_a[0], bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][0]);
-		printf("%s : %f \n ", bmsParam_a[1], bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][1]);*/
+		printf("%s : %f \n ", bmsParam_a[1], bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][1]);
 		bmsReceiverData_s.valCount_i++;
 	}
 }
@@ -47,7 +47,7 @@ int main ()
   for(int count = 0;count++ <= 150; count++)
   {
 	scanf("%s", bmsData_a);	
-	//readBMSdata(bmsData_a);
+	readBMSdata(bmsData_a);
   }
 	
   return 0;	
