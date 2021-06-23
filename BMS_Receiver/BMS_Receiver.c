@@ -52,7 +52,7 @@ int main ()
   for(int count = 0;count++ <= 200; count++)
   {
 	scanf("%s", bmsData_a);	
-	readBMSdata(bmsData_a);
+	//readBMSdata(bmsData_a);
   }
 	
   return 0;	
