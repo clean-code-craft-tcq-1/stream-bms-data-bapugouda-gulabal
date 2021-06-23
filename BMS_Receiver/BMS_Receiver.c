@@ -15,7 +15,16 @@
 /* Declarations */
 bmsReceiver_t bmsReceiverData_s = {0};
 
-void readBMSdata(char *bmsData_a)
+/*---------------------------------------------------------------------------*/
+/*     FUNCTION:    readBMSdata_v
+ */
+/*!    \brief       Reads the BMS data and stores it
+ *
+ *     \param       char *bmsData_a - scanned sender data from console
+ *     \returns     void
+ *
+*//*------------------------------------------------------------------------*/
+void readBMSdata_v(char *bmsData_a)
 {
 	int cnt_i = 0, socCnt_i = 0;
 	char *strIndexer_c = NULL;
@@ -42,9 +51,18 @@ void readBMSdata(char *bmsData_a)
 		bmsReceiverData_s.valCount_i++;
 		printf("bmsReceiverData_s.valCount_i %d \n ", bmsReceiverData_s.valCount_i);
 	}
-}
+} /* EO readBMSdata_v */
 
-void analyseBMSData(void)
+/*---------------------------------------------------------------------------*/
+/*     FUNCTION:    analyseBMSData_v
+ */
+/*!    \brief       Analyze the received BMS data to find min,max and average
+ *
+ *     \param       void
+ *     \returns     void
+ *
+*//*------------------------------------------------------------------------*/
+void analyseBMSData_v(void)
 {
 	bmsReceiverData_s.tempStat_e.minVal_f = bmsReceiverData_s.bmsParamVal_f[0][0];
 	bmsReceiverData_s.tempStat_e.maxVal_f = bmsReceiverData_s.bmsParamVal_f[0][0];
@@ -53,24 +71,7 @@ void analyseBMSData(void)
 	
 	for(int count_i=0;count_i < bmsReceiverData_s.valCount_i; count_i++)
 	{
-		printf("%s : %f \n ", bmsParam_a[0], bmsReceiverData_s.bmsParamVal_f[count_i][0]);
-		printf("%s : %f \n ", bmsParam_a[1], bmsReceiverData_s.bmsParamVal_f[count_i][1]);
-		
-		if(bmsReceiverData_s.bmsParamVal_f[count_i][0] < bmsReceiverData_s.tempStat_e.minVal_f) {
-			bmsReceiverData_s.tempStat_e.minVal_f = bmsReceiverData_s.bmsParamVal_f[count_i][0];
-		}
-		if(bmsReceiverData_s.bmsParamVal_f[count_i][1] < bmsReceiverData_s.socStat_e.minVal_f) {
-			bmsReceiverData_s.socStat_e.minVal_f = bmsReceiverData_s.bmsParamVal_f[count_i][1];
-		}
-		if(bmsReceiverData_s.bmsParamVal_f[count_i][0] > bmsReceiverData_s.tempStat_e.maxVal_f) {
-			bmsReceiverData_s.tempStat_e.maxVal_f = bmsReceiverData_s.bmsParamVal_f[count_i][0];
-		}
-		if(bmsReceiverData_s.bmsParamVal_f[count_i][1] > bmsReceiverData_s.socStat_e.maxVal_f) {
-			bmsReceiverData_s.socStat_e.maxVal_f = bmsReceiverData_s.bmsParamVal_f[count_i][1];
-		}		
-
-		bmsReceiverData_s.tempStat_e.avg_f = bmsReceiverData_s.tempStat_e.avg_f + bmsReceiverData_s.bmsParamVal_f[0][count_i];
-		bmsReceiverData_s.socStat_e.avg_f = bmsReceiverData_s.socStat_e.avg_f + bmsReceiverData_s.bmsParamVal_f[1][count_i];
+		calDataRanges_v();
 	}
 	bmsReceiverData_s.tempStat_e.avg_f = bmsReceiverData_s.tempStat_e.avg_f / bmsReceiverData_s.valCount_i;
 	bmsReceiverData_s.socStat_e.avg_f = bmsReceiverData_s.socStat_e.avg_f / bmsReceiverData_s.valCount_i;
@@ -81,6 +82,25 @@ void analyseBMSData(void)
 	printf("Maximum SOC value : %f \n", bmsReceiverData_s.socStat_e.maxVal_f);
 	printf("Average Temperature value : %f \n", bmsReceiverData_s.tempStat_e.avg_f);
 	printf("Average SOC value : %f \n", bmsReceiverData_s.socStat_e.avg_f);
+}/* EO analyseBMSData_v */
+
+void calDataRanges_v(void)
+{
+	if(bmsReceiverData_s.bmsParamVal_f[count_i][0] < bmsReceiverData_s.tempStat_e.minVal_f) {
+		bmsReceiverData_s.tempStat_e.minVal_f = bmsReceiverData_s.bmsParamVal_f[count_i][0];
+	}
+	if(bmsReceiverData_s.bmsParamVal_f[count_i][1] < bmsReceiverData_s.socStat_e.minVal_f) {
+		bmsReceiverData_s.socStat_e.minVal_f = bmsReceiverData_s.bmsParamVal_f[count_i][1];
+	}
+	if(bmsReceiverData_s.bmsParamVal_f[count_i][0] > bmsReceiverData_s.tempStat_e.maxVal_f) {
+		bmsReceiverData_s.tempStat_e.maxVal_f = bmsReceiverData_s.bmsParamVal_f[count_i][0];
+	}
+	if(bmsReceiverData_s.bmsParamVal_f[count_i][1] > bmsReceiverData_s.socStat_e.maxVal_f) {
+		bmsReceiverData_s.socStat_e.maxVal_f = bmsReceiverData_s.bmsParamVal_f[count_i][1];
+	}		
+
+	bmsReceiverData_s.tempStat_e.avg_f = bmsReceiverData_s.tempStat_e.avg_f + bmsReceiverData_s.bmsParamVal_f[0][count_i];
+	bmsReceiverData_s.socStat_e.avg_f = bmsReceiverData_s.socStat_e.avg_f + bmsReceiverData_s.bmsParamVal_f[1][count_i];
 }
 
 int main ()
@@ -90,8 +110,8 @@ int main ()
   bmsReceiverData_s.valCount_i = 0;
   for(int count = 0;count++ <= 200; count++)
   {
-	scanf("%s", bmsData_a);	
-	readBMSdata(bmsData_a);
+	scanf("%s", bmsData_a);	/* Reads the sender's BMS data from console */
+	readBMSdata_v(bmsData_a);
   }
   
   analyseBMSData();
