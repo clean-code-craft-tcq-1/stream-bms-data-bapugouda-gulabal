@@ -19,7 +19,7 @@ void readBMSdata(char *bmsData_a)
 {
 	int cnt_i = 0;
 	char *strIndexer_c = NULL;
-	char chTempBuf_a[2],chSOCBuff_a[2];
+	char chTempBuf_a[3],chSOCBuff_a[3];
 	
 	strIndexer_c = strstr(bmsData_a, bmsParam_a[0]);
 	if(NULL != strIndexer_c)
