@@ -12,6 +12,7 @@
 /* Inclusions */
 #include "BMS_Receiver.h"
 
+extern bmsReceiver_t bmsReceiverData_s;
 /*---------------------------------------------------------------------------*/
 /*     FUNCTION:    analyseBMSData_v
  */
