@@ -21,7 +21,7 @@ void readBMSdata(char *bmsData_a)
 	char *strIndexer_c = NULL;
 	char chTempBuf_a[2],chSOCBuff_a[2];
 	
-	strIndexer_c = strstr(bmsData_a, "Temperature");
+	strIndexer_c = strstr(bmsData_a, bmsParam_a[0]);
 	printf("strIndexer_c %s \n",strIndexer_c);
 	if(NULL != strIndexer_c)
 	{
@@ -45,7 +45,7 @@ int main ()
 {
   char bmsData_a[500] = {0};
   
-  for(int count = 0;count++ <= 150; count++)
+  for(int count = 0;count++ <= 200; count++)
   {
 	scanf("%s", bmsData_a);	
 	readBMSdata(bmsData_a);
