@@ -56,17 +56,17 @@ void analyseBMSData(void)
 		printf("%s : %f \n ", bmsParam_a[0], bmsReceiverData_s.bmsParamVal_f[count_i][0]);
 		printf("%s : %f \n ", bmsParam_a[1], bmsReceiverData_s.bmsParamVal_f[count_i][1]);
 		
-		if(bmsReceiverData_s.bmsParamVal_f[0][count_i] < bmsReceiverData_s.tempStat_e.minVal_f) {
-			bmsReceiverData_s.tempStat_e.minVal_f = bmsReceiverData_s.bmsParamVal_f[0][count_i];
+		if(bmsReceiverData_s.bmsParamVal_f[count_i][0] < bmsReceiverData_s.tempStat_e.minVal_f) {
+			bmsReceiverData_s.tempStat_e.minVal_f = bmsReceiverData_s.bmsParamVal_f[count_i][0];
 		}
-		if(bmsReceiverData_s.bmsParamVal_f[1][count_i] < bmsReceiverData_s.socStat_e.minVal_f) {
-			bmsReceiverData_s.socStat_e.minVal_f = bmsReceiverData_s.bmsParamVal_f[1][count_i];
+		if(bmsReceiverData_s.bmsParamVal_f[count_i][1] < bmsReceiverData_s.socStat_e.minVal_f) {
+			bmsReceiverData_s.socStat_e.minVal_f = bmsReceiverData_s.bmsParamVal_f[count_i][1];
 		}
-		if(bmsReceiverData_s.bmsParamVal_f[0][count_i] > bmsReceiverData_s.tempStat_e.maxVal_f) {
-			bmsReceiverData_s.tempStat_e.maxVal_f = bmsReceiverData_s.bmsParamVal_f[0][count_i];
+		if(bmsReceiverData_s.bmsParamVal_f[count_i][0] > bmsReceiverData_s.tempStat_e.maxVal_f) {
+			bmsReceiverData_s.tempStat_e.maxVal_f = bmsReceiverData_s.bmsParamVal_f[count_i][0];
 		}
-		if(bmsReceiverData_s.bmsParamVal_f[1][count_i] > bmsReceiverData_s.socStat_e.maxVal_f) {
-			bmsReceiverData_s.socStat_e.maxVal_f = bmsReceiverData_s.bmsParamVal_f[1][count_i];
+		if(bmsReceiverData_s.bmsParamVal_f[count_i][1] > bmsReceiverData_s.socStat_e.maxVal_f) {
+			bmsReceiverData_s.socStat_e.maxVal_f = bmsReceiverData_s.bmsParamVal_f[count_i][1];
 		}		
 
 		bmsReceiverData_s.tempStat_e.avg_f = bmsReceiverData_s.tempStat_e.avg_f + bmsReceiverData_s.bmsParamVal_f[0][count_i];
