@@ -29,14 +29,12 @@ void readBMSdata(char *bmsData_a)
 		while(strIndexer_c[12+cnt_i] != ',')
 		{
 			chTempBuf_a[cnt_i]= strIndexer_c[12+cnt_i];
-			printf("chTempBuf_a[25+cnt_i] : %c %d \n", chTempBuf_a[cnt_i],cnt_i);
 			cnt_i++;
 		}
 		chTempBuf_a[cnt_i] = '\0';
 		while(strIndexer_c[25+cnt_i+socCnt_i] != ',')
 		{
 			chSOCBuff_a[socCnt_i]= strIndexer_c[25+cnt_i+socCnt_i];
-			printf("chSOCBuff_a[25+cnt_i] : %c %d \n", chSOCBuff_a[socCnt_i],socCnt_i);
 			socCnt_i++;
 		}	
 		chSOCBuff_a[socCnt_i] = '\0';
@@ -67,7 +65,7 @@ void analyseBMSData(void)
 			bmsReceiverData_s.tempStat_e.maxVal_f = bmsReceiverData_s.bmsParamVal_f[0][count_i];
 		}
 		if(bmsReceiverData_s.bmsParamVal_f[1][count_i] > bmsReceiverData_s.socStat_e.maxVal_f) {
-			bmsReceiverData_s.socStat_e.maxVal_f = bmsReceiverData_s.bmsParamVal_f[0][count_i];
+			bmsReceiverData_s.socStat_e.maxVal_f = bmsReceiverData_s.bmsParamVal_f[1][count_i];
 		}		
 
 		bmsReceiverData_s.tempStat_e.avg_f = bmsReceiverData_s.tempStat_e.avg_f + bmsReceiverData_s.bmsParamVal_f[0][count_i];
@@ -88,6 +86,7 @@ int main ()
 {
   char bmsData_a[500] = {0};
   
+  bmsReceiverData_s.valCount_i = 0;
   for(int count = 0;count++ <= 200; count++)
   {
 	scanf("%s", bmsData_a);	
