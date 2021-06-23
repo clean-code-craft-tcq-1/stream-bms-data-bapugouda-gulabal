@@ -42,9 +42,9 @@ void readBMSdata(char *bmsData_a)
 
 int main ()
 {
-  char bmsData_a[500] = {0};
+  char bmsData_a[35] = {0};
   
-  for(int count = 0;count++ <= 200; count++)
+  for(int count = 0;count++ <= 150; count++)
   {
 	scanf("%s", bmsData_a);	
 	readBMSdata(bmsData_a);
