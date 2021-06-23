@@ -21,21 +21,21 @@ void readBMSdata(char *bmsData_a)
 	char temp_buffer[4] = {0};
 	char *strIndexer_c = NULL;
 	
-	for(int cntParam = 0;cntParam < 2; cntParam++)
+	for(int cntParam = 0;cntParam < 1; cntParam++)
 	{
 		strIndexer_c = strstr(bmsData_a, bmsParam_a[cntParam]);
 		if(NULL != strIndexer_c)
 		{
 			cnt_i = 0;
-			temp_buffer[0] ='\0';
+			//temp_buffer[0] ='\0';
 			printf("strIndexer_c %s \n",strIndexer_c);
+			printf("temp_buffer %s \n",temp_buffer);
+			temp_buffer[0] = 'a';
 			printf("temp_buffer %s \n",temp_buffer);
 			printf("------------cnt_i :: %d \n", cnt_i);
 			while(strIndexer_c[12+cnt_i] != ',')
 			{
 				//temp_buffer[cnt_i] = strIndexer_c[12+cnt_i];
-				strcat(temp_buffer, strIndexer_c[12+cnt_i]);
-				printf("temp_buffer %s \n",temp_buffer);
 				printf("asdfsdfdsfsfsd %c \n",strIndexer_c[12+cnt_i]);
 				cnt_i++;
 			}
