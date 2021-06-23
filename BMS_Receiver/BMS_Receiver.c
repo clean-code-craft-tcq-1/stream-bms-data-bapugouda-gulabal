@@ -22,7 +22,6 @@ void readBMSdata(char *bmsData_a)
 	char chTempBuf_a[2],chSOCBuff_a[2];
 	
 	strIndexer_c = strstr(bmsData_a, bmsParam_a[0]);
-	printf("strIndexer_c %s \n",strIndexer_c);
 	if(NULL != strIndexer_c)
 	{
 		cnt_i = 0;
