@@ -48,8 +48,8 @@ void analyseBMSData(void)
 {
 	bmsReceiverData_s.tempStat_e.minVal_f = bmsReceiverData_s.bmsParamVal_f[0][0];
 	bmsReceiverData_s.tempStat_e.maxVal_f = bmsReceiverData_s.bmsParamVal_f[0][0];
-	bmsReceiverData_s.socStat_e.minVal_f  = bmsReceiverData_s.bmsParamVal_f[1][0];
-	bmsReceiverData_s.socStat_e.maxVal_f  = bmsReceiverData_s.bmsParamVal_f[1][0];
+	bmsReceiverData_s.socStat_e.minVal_f  = bmsReceiverData_s.bmsParamVal_f[0][1];
+	bmsReceiverData_s.socStat_e.maxVal_f  = bmsReceiverData_s.bmsParamVal_f[0][1];
 	
 	for(int count_i=0;count_i < bmsReceiverData_s.valCount_i; count_i++)
 	{
