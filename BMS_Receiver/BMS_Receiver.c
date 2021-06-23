@@ -24,12 +24,11 @@ void readBMSdata(char *bmsData_a)
 	strIndexer_c = strstr(bmsData_a, bmsParam_a[0]);
 	if(NULL != strIndexer_c)
 	{
-		cnt_i = 0;
 		printf("strIndexer_c %s \n",strIndexer_c);
 		while(strIndexer_c[12+cnt_i] != ',')
 		{
 			chTempBuf_a[cnt_i]= strIndexer_c[12+cnt_i];
-			chSOCBuff_a[cnt_i]= strIndexer_c[25+cnt_i];
+			chSOCBuff_a[cnt_i]= strIndexer_c[12+cnt_i];
 			printf("chSOCBuff_a[cnt_i] : %s",chSOCBuff_a[cnt_i]);
 			cnt_i++;
 		}
