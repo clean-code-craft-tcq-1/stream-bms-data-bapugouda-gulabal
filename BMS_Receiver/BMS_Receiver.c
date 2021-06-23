@@ -25,7 +25,6 @@ void readBMSdata(char *bmsData_a)
 	if(NULL != strIndexer_c)
 	{
 		cnt_i = 0;
-		printf("strIndexer_c %s \n",strIndexer_c);
 		while(strIndexer_c[12+cnt_i] != ',')
 		{
 			chTempBuf_a[cnt_i]= strIndexer_c[12+cnt_i];
@@ -40,8 +39,6 @@ void readBMSdata(char *bmsData_a)
 		chSOCBuff_a[socCnt_i] = '\0';
 		bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][0] = atof(chTempBuf_a);
 		bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][1] = atof(chSOCBuff_a);
-		printf("%s : %f \n ", bmsParam_a[0], bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][0]);
-		printf("%s : %f \n ", bmsParam_a[1], bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][1]);
 		bmsReceiverData_s.valCount_i++;
 	}
 }
@@ -55,6 +52,9 @@ void analyseBMSData(void)
 	
 	for(int count_i=0;count_i < bmsReceiverData_s.valCount_i; count_i++)
 	{
+		printf("%s : %f \n ", bmsParam_a[0], bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][0]);
+		printf("%s : %f \n ", bmsParam_a[1], bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][1]);
+		
 		if(bmsReceiverData_s.bmsParamVal_f[0][count_i] < bmsReceiverData_s.tempStat_e.minVal_f) {
 			bmsReceiverData_s.tempStat_e.minVal_f = bmsReceiverData_s.bmsParamVal_f[0][count_i];
 		}
