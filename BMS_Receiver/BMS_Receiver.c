@@ -21,7 +21,7 @@ void readBMSdata(char *bmsData_a)
 	char temp_buffer[4] = {0};
 	char *strIndexer_c = NULL;
 	
-	for(int cntParam = 0;cntParam < 1; cntParam++)
+	for(int cntParam = 0;cntParam < 2; cntParam++)
 	{
 		strIndexer_c = strstr(bmsData_a, bmsParam_a[cntParam]);
 		if(NULL != strIndexer_c)
