@@ -29,7 +29,7 @@ void readBMSdata(char *bmsData_a)
 		while(strIndexer_c[12+cnt_i] != ',')
 		{
 			chTempBuf_a[cnt_i]= strIndexer_c[12+cnt_i];
-			chSOCBuff_a[cnt_i]= strIndexer_c[27+cnt_i];
+			chSOCBuff_a[cnt_i]= strIndexer_c[25+cnt_i];
 			printf("chSOCBuff_a[cnt_i] : %s",chSOCBuff_a[cnt_i]);
 			cnt_i++;
 		}
