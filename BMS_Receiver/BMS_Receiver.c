@@ -14,7 +14,6 @@
 
 /* Declarations */
 bmsReceiver_t bmsReceiverData_s = {0};
-char tempBuffer_a[4];
 
 void readBMSdata(char *bmsData_a)
 {
@@ -28,19 +27,13 @@ void readBMSdata(char *bmsData_a)
 		{
 			cnt_i = 0;
 			printf("strIndexer_c %s \n",strIndexer_c);
-			tempBuffer_a[0] ='\0';
-			//tempBuffer_a[0] = '3';
 			while(strIndexer_c[12+cnt_i] != ',')
 			{
 				ch[cnt_i]= strIndexer_c[12+cnt_i];
-				printf("------------cnt_i :: %d \n", cnt_i);
-				printf("asdfsdfdsfsfsd %c \n",strIndexer_c[12+cnt_i]); 
-				//strcat(tempBuffer_a, strIndexer_c[12+cnt_i]);
-				printf("tempBuffer_a %s \n",tempBuffer_a);
 				printf("tempBuffer_a %s \n",ch);
 				cnt_i++;
 			}
-			bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][cntParam] = atof(tempBuffer_a);
+			bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][cntParam] = atof(ch);
 			printf("%s : %f \n ", bmsParam_a[cntParam], bmsReceiverData_s.bmsParamVal_f[bmsReceiverData_s.valCount_i][cntParam]);
 			bmsReceiverData_s.valCount_i++;
 		}
