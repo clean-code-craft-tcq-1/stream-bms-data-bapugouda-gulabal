@@ -44,11 +44,11 @@ int main ()
 {
   char bmsData_a[35] = {0};
   
-  for(int count = 0;count++ <= 150; count++)
+  /*for(int count = 0;count++ <= 150; count++)
   {
 	scanf("%s", bmsData_a);	
 	//readBMSdata(bmsData_a);
-  }
+  }*/
 	
   return 0;	
 }
